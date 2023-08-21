@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body id="bodyHeight" class="bg-body d-flex flex-column justify-content-between">
+    <header>
+        <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+            <div class="container"><a class="navbar-brand d-flex align-items-center" href="/"><span>Kaan's To Do</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse gap-1" id="navcol-5">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Weekly List</a>
+                            <div class="dropdown-menu"><a class="dropdown-item" href="/sunday">Sunday</a><a class="dropdown-item" href="/monday">Monday</a><a class="dropdown-item" href="/tuesday">Tuesday</a><a class="dropdown-item" href="/wednesday">Wednesday</a><a class="dropdown-item" href="/thursday">Thursday</a><a class="dropdown-item" href="/friday">Friday</a><a class="dropdown-item" href="/saturday">Saturday</a></div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="/mygoals">My Goals List</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <% const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; %>
+    <% let today = days[(new Date().getDay())]; %>
+    <main id="main_width" class="container d-flex flex-column justify-content-center">
+        <% if (locals.home) { %>
+        <%- include(`partials/${today}.ejs`)%>
+        <% } else { %>
+        <%- include(`partials/${day}.ejs`)%>
+        <% } %>
+    </main>
+    <footer class="text-center bg-dark d-flex justify-content-center mt-5" style="width: 100%;">
+        <div class="container text-primary py-4 py-lg-5">
+            <p class="mb-0">Copyright © <%= new Date().getFullYear() %> Kaan Kara</p>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/check.js"></script>
+</body>
+
+</html>

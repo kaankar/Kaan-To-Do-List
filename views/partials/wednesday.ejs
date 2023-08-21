@@ -1,0 +1,27 @@
+<h1 class="text-white text-center p-3">Wednesday</h1>
+<% if (locals.item && item.length != 0) { %>
+    <% for (let i = 0; i < (item.length - 1); i++) {%>
+        <div class="input-group mb-3">
+            <div class="input-group-text">
+                <% if (itemCheck[i] === "true") { %>
+                <input id="check<%=i%>" class="form-check-input m-0 bg-secondary check" type="checkbox" checked>
+                <% } else { %>
+                <input id="check<%=i%>" class="form-check-input m-0 bg-secondary check" type="checkbox">
+                <% } %>
+            </div>
+            <% if (itemCheck[i] === "true") { %>
+            <p id="p<%=i%>" class="form-control bg-white p-2 fs-6 m-0 text-decoration-line-through"> <%= item[i] %> </p>
+            <% } else { %>
+            <p id="p<%=i%>" class="form-control bg-white p-2 fs-6 m-0 "> <%= item[i] %> </p>
+            <% } %>
+        </div>
+<% } } %>
+<form action="/wednesday" method="post" class="form-check p-0">
+<div class="input-group mb-3">
+    <input name="newItem" type="text" class="form-control bg-white p-2 fs-6 m-0" placeholder="New Item" required>
+    <div class="input-group-text p-0 ">
+        <input class="btn btn-outline-dark fs-4 fw-bolder  pt-0 border-2"  type="submit" value="+">
+    </div>
+</div>
+</form>
+<a href="/wednesdayScratch" id="btnSize" class="btn btn-outline-danger fs-4 fw-bolder text-white pt-0 border-2">Restart</a>

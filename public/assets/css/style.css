@@ -1,0 +1,22 @@
+@media (min-width: 992px) {
+    #main_width {
+    max-width: 800px !important;
+    }
+}
+
+.check {
+    width: 22px;
+    height: 22px;
+}
+
+#bodyHeight {
+    height: 100vh !important;
+}
+
+#btnSize {
+    width: 120px;
+    height: 42px;
+    align-self: center;
+    font-weight: 450 !important;
+    font-size: 23px !important;
+}

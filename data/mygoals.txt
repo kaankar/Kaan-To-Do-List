@@ -1,0 +1,3 @@
+İngilizce Öğrenmek
+Programlamada gelişmek
+To Do Liste: Tekli silme özelliği getirme,  Login oluşturma ve kullanıcıya özel verileri çekme yani database kullanmak
